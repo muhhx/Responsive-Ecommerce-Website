@@ -9,7 +9,7 @@ export const Section = styled.header`
     height: 6.5rem;
     display: flex;
     justify-content: center;
-    background-color: ${({ theme }) => theme.color.backgroundWhite};
+    background-color: ${({ theme }) => theme.color.backgroundMain};
 `;
 
 export const Container = styled.div`
@@ -23,7 +23,7 @@ export const Container = styled.div`
 `;
 
 export const Span = styled.span`
-    color: ${({ theme }) => theme.color.fontBrown};
+    color: ${({ theme }) => theme.color.fontMain};
     cursor: pointer;
     font-weight: 500;
     text-transform: uppercase;
@@ -41,8 +41,8 @@ export const Menu = styled.button`
     width: 2.5rem;
     height: .8rem;
     border: none;
-    border-bottom: solid 1px ${({ theme }) => theme.color.fontBrown};
-    border-top: solid 1px ${({ theme }) => theme.color.fontBrown};
+    border-bottom: solid 1px ${({ theme }) => theme.color.fontMain};
+    border-top: solid 1px ${({ theme }) => theme.color.fontMain};
     cursor: pointer;
     background-color: transparent;
 `;

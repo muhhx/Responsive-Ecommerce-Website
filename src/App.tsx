@@ -1,4 +1,5 @@
 import { useMenu } from './context/menuContext';
+import { useTheme } from './context/themeContext';
 
 //Components
 import Header from './components/Header';
@@ -10,13 +11,27 @@ import Menu from './components/Menu';
 import { ThemeProvider } from 'styled-components';
 import './default.css'
 
-const theme = {
+const themeLight = {
   color: {
-    backgroundWhite: "#F5F1EC",
+    backgroundMain: "#F5F1EC",
     backgroundDarker: "#E4DBD9",
-    backgroundBlack: "#1B1B1B",
-    fontBrown: "#877673",
-    fontOrange: "#EA703B", //It can change to the brand's actual colors
+    fontMain: "#877673",
+    fontOrange: "#ff670f",
+    greyLighter: "#ADABA8",
+    greyDarker: "#656565"
+  },
+  font: {
+    fontSecundary: "Diot",
+    fontTerciary: "'Cormorant Upright', serif",
+  }
+}
+
+const themeDark = {
+  color: {
+    backgroundMain: "#1B1B1B",
+    fontMain: "#F5F1EC",
+    backgroundDarker: "#E4DBD9",
+    fontOrange: "#ff670f",
     greyLighter: "#ADABA8",
     greyDarker: "#656565"
   },
@@ -27,10 +42,11 @@ const theme = {
 }
 
 const App: React.FC = () => {
+  const { isLight } = useTheme()
   const { isOpen } = useMenu()
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isLight ? themeLight : themeDark}>
       {isOpen ? <Menu /> : ''}
       <Header />
       <main className="main">

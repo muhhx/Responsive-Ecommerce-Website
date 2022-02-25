@@ -1,9 +1,15 @@
 import { useMenu } from "../../context/menuContext";
+import { useTheme } from "../../context/themeContext";
 import { headerAssets } from "./data";
 import { Button, Container, Icon, Menu, Section, Span, Wrapper } from "./styles"
 
 const Header: React.FC = () => {
+    const { isLight, setIsLight } = useTheme()
     const { isOpen, setIsOpen } = useMenu()
+
+    function handleTheme() {
+        setIsLight(isLight === true ? false : true)
+    }
 
     function handleMenu() {
         setIsOpen(isOpen === false ? true : false)
@@ -18,11 +24,11 @@ const Header: React.FC = () => {
                 </Wrapper>
                 <Span>{headerAssets.spanLogo}</Span>
                 <Wrapper isMenu={false}>
-                    <Button>
-                        <Icon src={headerAssets.iconSearch} alt={headerAssets.searchAlt}/>
+                    <Button onClick={handleTheme}>
+                        <Icon src={isLight ? headerAssets.darkMode : headerAssets.lightMode} alt={headerAssets.modeAlt}/>
                     </Button>
                     <Button>
-                        <Icon src={headerAssets.iconUser} alt={headerAssets.userAlt}/>
+                        <Icon src={isLight ? headerAssets.userDark : headerAssets.userLight} alt={headerAssets.userAlt}/>
                     </Button>
                     <Span>{headerAssets.spanBag} 0.00</Span>
                 </Wrapper>

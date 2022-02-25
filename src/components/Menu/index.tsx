@@ -1,21 +1,22 @@
-import { Button, Container, Section, Sticky, Wrapper } from "./styles";
+import { Button, Container, Footer, Navigation, Section, Sticky, Span } from "./styles";
 
 const Menu: React.FC = () => {
     return (
         <Sticky>
             <Section>
                 <Container>
-                    <Wrapper>
-                        <Button>NEW</Button> / 
+                    <Navigation>
                         <Button>CAMISETAS</Button>
-                    </Wrapper>
-                    <Button>COLECIONADOR</Button>
-                    <Wrapper>
-                        <Button>TRICOT</Button> / 
+                        <Button>COLECIONADOR</Button>
+                        <Button>TRICOT</Button>
                         <Button>ACESSÓRIOS</Button>
-                    </Wrapper>
-                    <Button>SOBRE</Button>
-                </Container>    
+                    </Navigation>
+                    <Footer>
+                        <Span>Sobre</Span>
+                        <Span>Instagram</Span>
+                        <Span>Contato</Span>
+                    </Footer>
+                </Container>
             </Section>
         </Sticky>
     )

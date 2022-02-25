@@ -7,7 +7,7 @@ interface Props {
 export const Section = styled.section`
     width: 100%;
     height: calc(100vh - 6.5rem);
-    background-color: ${({ theme }) => theme.color.backgroundWhite};
+    background-color: ${({ theme }) => theme.color.backgroundMain};
     display: flex;
     justify-content: center;
 `;
@@ -113,7 +113,7 @@ export const Title = styled.div`
 export const TitleText = styled.h1`
     grid-row: 1 / 2;
     font-family: ${({ theme }) => theme.font.fontSecundary};
-    color: ${({ theme }) => theme.color.fontBrown};
+    color: ${({ theme }) => theme.color.fontMain};
     font-weight: 500;
     font-size: 10vw;
     line-height: .9;
@@ -135,7 +135,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SubTitle = styled.h3`
-    color: ${({ theme }) => theme.color.fontBrown};
+    color: ${({ theme }) => theme.color.fontMain};
     font-weight: 400;
     font-size: .8vw;
     margin-left: 4px;
@@ -148,7 +148,7 @@ export const SubTitle = styled.h3`
     `;
 
 export const Span = styled.span`
-    color: ${({ theme }) => theme.color.fontBrown};
+    color: ${({ theme }) => theme.color.fontMain};
     font-size: 3vw;
     font-weight: 400;
 

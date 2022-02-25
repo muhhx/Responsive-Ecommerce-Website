@@ -15,36 +15,58 @@ export const Section = styled.section`
     top: 0;
     display: flex;
     justify-content: center;
-    background-color: rgba(228, 219, 217, .8);
-    backdrop-filter: blur(50px);
+    /* background-color: rgba(228, 219, 217, .8); */
+    background-color: ${({ theme }) => theme.color.backgroundMain === '#F5F1EC' ? 'rgba(228, 219, 217, .8)' : 'rgba(27, 27, 27, .8)'};
+    backdrop-filter: blur(30px);
 `;
 
 export const Container = styled.div`
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    /* padding-top: 6.5rem; */
+    gap: 20px;
 `;
 
-export const Wrapper = styled.div`
+export const Navigation = styled.div`
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+`;
+
+export const Footer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 `;
 
 export const Button = styled.button`
+    font-family: ${({ theme }) => theme.font.fontTerciary};
+    font-style: italic;
     border: none;
     background-color: transparent;
-    font-size: 72px;
-    color: ${({ theme }) => theme.color.fontBrown};
+    font-size: 48px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.color.fontMain};
     cursor: pointer;
+    transition: .2s ease-in;
 
     &:hover {
-        text-decoration: underline;
+        color: ${({ theme }) => theme.color.fontOrange};
     }
+
+    @media only screen and (max-width: 450px) {
+        font-size: 36px;
+    }
+`;
+
+export const Span = styled.span`
+    color: ${({ theme }) => theme.color.fontMain};
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
 `;
