@@ -1,7 +1,7 @@
 import { useMenu } from "../../context/menuContext";
 import { useTheme } from "../../context/themeContext";
 import { headerAssets } from "./data";
-import { Button, Container, Icon, Menu, Section, Span, Wrapper } from "./styles"
+import { Button, Container, Icon, Menu, Section, Span, Wrapper, LogoWrapper } from "./styles"
 
 const Header: React.FC = () => {
     const { isLight, setIsLight } = useTheme()
@@ -22,7 +22,9 @@ const Header: React.FC = () => {
                     <Menu />
                     <Span>{isOpen ? 'CLOSE' : 'SHOP'}</Span>
                 </Wrapper>
-                <Span>{headerAssets.spanLogo}</Span>
+                <LogoWrapper>
+                    <Span>{headerAssets.spanLogo}</Span>
+                </LogoWrapper>
                 <Wrapper isMenu={false}>
                     <Button onClick={handleTheme}>
                         <Icon src={isLight ? headerAssets.darkMode : headerAssets.lightMode} alt={headerAssets.modeAlt}/>

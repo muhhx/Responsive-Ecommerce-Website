@@ -153,6 +153,6 @@ export const Span = styled.span`
     font-weight: 400;
 
     @media only screen and (max-width: 900px) {
-        font-size: 12px;
+        display: none;
     }
 `;

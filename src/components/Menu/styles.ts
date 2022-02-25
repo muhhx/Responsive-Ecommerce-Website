@@ -28,6 +28,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+    position: relative;
 `;
 
 export const Navigation = styled.div`
@@ -42,6 +43,10 @@ export const Footer = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
 `;
 
 export const Button = styled.button`
@@ -60,7 +65,7 @@ export const Button = styled.button`
     }
 
     @media only screen and (max-width: 450px) {
-        font-size: 36px;
+        font-size: 10vw;
     }
 `;
 

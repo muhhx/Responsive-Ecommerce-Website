@@ -35,6 +35,7 @@ export const Wrapper = styled.div`
     gap: 10px;
     width: 50%;
     justify-content: ${(props: Props) => props.isMenu === true ? 'start' : 'end'};
+    flex-wrap: wrap;
 `;
 
 export const Menu = styled.button`
@@ -57,4 +58,10 @@ export const Button = styled.button`
 
 export const Icon = styled.img`
     height: 100%;
+`;
+
+export const LogoWrapper = styled.div`
+    @media only screen and (max-width: 290px) {
+        display: none;
+    }
 `;
