@@ -9,6 +9,7 @@ import Menu from './components/Menu';
 
 //Styling
 import { ThemeProvider } from 'styled-components';
+import { Main, GlobalStyle } from './globalStyles';
 import './default.css'
 
 const themeLight = {
@@ -17,8 +18,6 @@ const themeLight = {
     backgroundDarker: "#E4DBD9",
     fontMain: "#877673",
     fontOrange: "#ff670f",
-    greyLighter: "#ADABA8",
-    greyDarker: "#656565"
   },
   font: {
     fontSecundary: "Diot",
@@ -29,11 +28,9 @@ const themeLight = {
 const themeDark = {
   color: {
     backgroundMain: "#1B1B1B",
-    fontMain: "#F5F1EC",
     backgroundDarker: "#E4DBD9",
+    fontMain: "#F5F1EC",
     fontOrange: "#ff670f",
-    greyLighter: "#ADABA8",
-    greyDarker: "#656565"
   },
   font: {
     fontSecundary: "Diot",
@@ -49,10 +46,10 @@ const App: React.FC = () => {
     <ThemeProvider theme={isLight ? themeLight : themeDark}>
       {isOpen ? <Menu /> : ''}
       <Header />
-      <main className="main">
+      <Main>
         <Routing />
-      </main>
-      {/* <Footer /> */}
+      </Main>
+      <GlobalStyle isOpen={isOpen}/>
     </ThemeProvider>
   )
 }
