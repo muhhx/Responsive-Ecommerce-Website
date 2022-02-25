@@ -18,7 +18,8 @@ const theme = {
     greyDarker: "#656565"
   },
   font: {
-    fontSecundary: "'Cormorant Upright', serif",
+    fontSecundary: "Diot",
+    // fontSecundary: "'Cormorant Upright', serif",
   }
 }
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <Navbar />
       <Routing />
-      <Footer />
+      {/* <Footer /> */}
     </ThemeProvider>
   )
 }

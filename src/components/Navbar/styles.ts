@@ -5,6 +5,7 @@ export const Section = styled.nav`
     height: 6.5rem;
     display: flex;
     justify-content: center;
+    background-color: ${({ theme }) => theme.color.backgroundWhite};
 `;
 
 export const Container = styled.div`
@@ -14,5 +15,5 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: blue;
+    /* background-color: blue; */
 `;
