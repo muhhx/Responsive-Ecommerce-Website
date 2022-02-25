@@ -14,7 +14,6 @@ export const Section = styled.section`
 
 export const Container = styled.div`
     width: 90%;
-    /* max-width: 1000px; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -36,7 +35,7 @@ export const ImageWrapper = styled.div`
 
     @media only screen and (max-width: 900px) {
         width: 90%;
-        height: 90%;
+        height: 88%;
     }
 `;
 
@@ -100,7 +99,7 @@ export const Title = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20%;
+    gap: 5%;
 
     @media only screen and (max-width: 900px) {
         height: 95%;
@@ -144,6 +143,16 @@ export const SubTitle = styled.h3`
     
     @media only screen and (max-width: 900px) {
         margin-left: 0px;
+        font-size: 12px;
+    }
+    `;
+
+export const Span = styled.span`
+    color: ${({ theme }) => theme.color.fontBrown};
+    font-size: 3vw;
+    font-weight: 400;
+
+    @media only screen and (max-width: 900px) {
         font-size: 12px;
     }
 `;

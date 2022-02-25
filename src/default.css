@@ -28,3 +28,7 @@ body {
     text-decoration: none;
     color: initial;
 }
+
+.main {
+    width: 100%;
+}

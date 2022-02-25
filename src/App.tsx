@@ -1,7 +1,10 @@
+import { useMenu } from './context/menuContext';
+
 //Components
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Routing from './routing/Routing';
 import Footer from './components/Footer';
+import Menu from './components/Menu';
 
 //Styling
 import { ThemeProvider } from 'styled-components';
@@ -19,15 +22,20 @@ const theme = {
   },
   font: {
     fontSecundary: "Diot",
-    // fontSecundary: "'Cormorant Upright', serif",
+    fontTerciary: "'Cormorant Upright', serif",
   }
 }
 
 const App: React.FC = () => {
+  const { isOpen } = useMenu()
+
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
-      <Routing />
+      {isOpen ? <Menu /> : ''}
+      <Header />
+      <main className="main">
+        <Routing />
+      </main>
       {/* <Footer /> */}
     </ThemeProvider>
   )

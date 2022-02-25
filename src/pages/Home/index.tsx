@@ -2,7 +2,7 @@ import image1 from '../../assets/img1.jpg'
 import image2 from '../../assets/img2.jpg'
 import image3 from '../../assets/img3.jpg'
 import image4 from '../../assets/img4.png'
-import { Section, Container, ImageWrapper, Image1, Image2, Image3, Image, Title, TitleText, SubTitle, Wrapper, Overlay } from "./styles";
+import { Section, Container, ImageWrapper, Image1, Image2, Image3, Image, Title, TitleText, SubTitle, Wrapper, Overlay, Span } from "./styles";
 
 const Home: React.FC = () => {
     return (
@@ -11,8 +11,9 @@ const Home: React.FC = () => {
                 <Title>
                     <Wrapper>
                         <TitleText>LOOK</TitleText>
-                        <SubTitle>Burberry, Summer 2021.</SubTitle>
+                        <SubTitle>Burberry Summer Collection.</SubTitle>
                     </Wrapper>
+                    <Span>AW21</Span>
                     <TitleText>BOOK</TitleText>
                 </Title>
                 <ImageWrapper>
