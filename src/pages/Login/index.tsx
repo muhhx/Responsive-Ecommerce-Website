@@ -11,13 +11,13 @@ const Login: React.FC = () => {
                         <InputWrapper>
                             <Span>Email</Span>
                             <InputArea>
-                                <Input />
+                                <Input type="text"/>
                             </InputArea>
                         </InputWrapper>
                         <InputWrapper>
                             <Span>Senha</Span>
                             <InputArea>
-                                <Input />
+                                <Input type="password"/>
                             </InputArea>
                         </InputWrapper>
                         <Button>Entrar</Button>

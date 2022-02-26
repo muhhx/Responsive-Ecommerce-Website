@@ -18,7 +18,8 @@ const themeLight = {
     backgroundDarker: "#E4DBD9",
     fontMain: "#877673",
     fontOrange: "#ff670f",
-    reverseColor: "#1B1B1B"
+    reverseColor: "#1B1B1B",
+    reverseHover: "#000000"
   },
   font: {
     fontSecundary: "Diot",
@@ -32,7 +33,8 @@ const themeDark = {
     backgroundDarker: "#E4DBD9",
     fontMain: "#F5F1EC",
     fontOrange: "#ff670f",
-    reverseColor: "#877673"
+    reverseColor: "#877673",
+    reverseHover: "#695f5d",
   },
   font: {
     fontSecundary: "Diot",

@@ -9,7 +9,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-    width: 100%;
+    width: 90%;
     max-width: 300px;
     height: 100%;
     display: flex;
@@ -30,9 +30,11 @@ export const Title = styled.h1`
     color: ${({ theme }) => theme.color.fontMain};
     font-family: ${({ theme }) => theme.font.fontSecundary};
     text-transform: uppercase;
-    font-size: 84px;
+    font-size: min(25vw, 84px);
     font-weight: 500;
-    letter-spacing: -12px;
+    letter-spacing: max(-10px, -3vw);
+    line-height: .8;
+
 `;
 
 export const Form = styled.form`
@@ -42,7 +44,6 @@ export const Form = styled.form`
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    /* background-color: black; */
 `;
 
 export const Error = styled.p`
@@ -58,7 +59,7 @@ export const InputWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
-`;
+    `;
 
 export const Span = styled.span`
     color: ${({ theme }) => theme.color.fontMain};
@@ -67,6 +68,7 @@ export const Span = styled.span`
 
 export const InputArea = styled.div`
     width: 100%;
+    border-left: solid 4px ${({ theme }) => theme.color.fontMain};
     background-color: white;
     display: flex;
     align-items: center;
@@ -91,8 +93,13 @@ export const Button = styled.button`
     border: none;
     color: white;
     margin-top: 15px;
-    background-color: ${({ theme }) => theme.color.fontOrange};
+    background-color: ${({ theme }) => theme.color.reverseColor};
     cursor: pointer;
+    transition: .2s ease-in;
+    
+    &:hover {
+        background-color: ${({ theme }) => theme.color.reverseHover};
+    }
 `;
 
 export const OptionsWrapper = styled.div`
@@ -100,6 +107,7 @@ export const OptionsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 `;
 
 export const Option = styled.span`
