@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 //Page components
+import PrivateRoute from "./PrivateRoute";
 import Home from "../pages/Home";
 import User from "../pages/User";
 import Login from "../pages/Login";
@@ -15,7 +16,9 @@ const Routing: React.FC = () => {
             <Route path={"/search"} element={<div>Search Page</div>}/>
             <Route path={"/login"} element={<Login />}/>
             <Route path={"/register"} element={<Register />}/>
-            <Route path={"/user"} element={<User />}/>
+            <Route element={<PrivateRoute />}>
+                <Route path={"/user"} element={<User />}/>
+            </Route>
             <Route path={"/admin"} element={<div>myAdmin Page</div>}/>
             <Route path={"/cart"} element={<div>Cart Page</div>}/>
             <Route path={"/payment"} element={<div>Payment Page</div>}/>

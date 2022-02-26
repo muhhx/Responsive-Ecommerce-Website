@@ -48,7 +48,6 @@ export const Form = styled.form`
 
 export const Error = styled.p`
     color: ${({ theme }) => theme.color.fontOrange};
-    width: 50%;
     text-align: center;
     font-size: 1.2rem;
 `;

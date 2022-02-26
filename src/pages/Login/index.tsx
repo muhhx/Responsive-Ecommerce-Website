@@ -1,10 +1,42 @@
+import { useState, useEffect } from "react";
+import { useUser } from "../../context/userContext";
+import { useNavigate } from "react-router-dom";
+import { handleLogIn } from "../../config/firebase";
 import { Link } from "react-router-dom";
 import { Container, FormWrapper, Section, Title, Form, Error, InputWrapper, InputArea, Input, Span, Button, OptionsWrapper, Option } from "./styles";
 
 const Login: React.FC = () => {
+    const [inputPassword, setInputPassword] = useState<string>("")
+    const [inputEmail, setInputEmail] = useState<string>("")
+    const [error, setError] = useState<string | null>(null)
+    const { currentUser } = useUser()
+    const navigate = useNavigate()
+    
+    useEffect(() => {
+        if(currentUser) {
+            navigate("/user")
+        }
+    }, [currentUser])
 
-    function handleSubmit(e: React.MouseEvent) {
+    function resetInput() {
+        setInputEmail("")
+        setInputPassword("")
+    }
+
+    async function handleSubmit(e: React.MouseEvent) {
         e.preventDefault()
+
+        if(inputEmail.length === 0 || inputPassword.length === 0) {
+            return setError("Preencha todos os campos.")
+        }
+
+        try {
+            setError(null)
+            await handleLogIn(inputEmail, inputPassword)
+            resetInput()
+        } catch {
+            return setError("Não foi possível logar sua conta. Verifique os campos digitados!")
+        }
     }
 
     return (
@@ -12,20 +44,22 @@ const Login: React.FC = () => {
             <Container>
                 <FormWrapper>
                     <Title>LOGIN</Title>
-                    <Error>Mensagem de erro</Error>
+                    {error !== null ? <Error>{error}</Error> : ""}
                     <Form>
                         <InputWrapper>
                             <Span>Email</Span>
                             <InputArea>
-                                <Input type="text"/>
+                                <Input type="text" onChange={(e) => setInputEmail(e.target.value)} value={inputEmail}/>
                             </InputArea>
                         </InputWrapper>
+
                         <InputWrapper>
                             <Span>Senha</Span>
                             <InputArea>
-                                <Input type="password"/>
+                                <Input type="password" onChange={(e) => setInputPassword(e.target.value)} value={inputPassword}/>
                             </InputArea>
                         </InputWrapper>
+
                         <Button onClick={(e) => handleSubmit(e)}>Entrar</Button>
                     </Form>
                     <OptionsWrapper>
