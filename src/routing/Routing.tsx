@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import User from "../pages/User";
 import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const Routing: React.FC = () => { 
     return (
@@ -13,7 +14,7 @@ const Routing: React.FC = () => {
             <Route path={"/product"} element={<div>Product Page</div>}/>
             <Route path={"/search"} element={<div>Search Page</div>}/>
             <Route path={"/login"} element={<Login />}/>
-            <Route path={"/register"} element={<div>Register Page</div>}/>
+            <Route path={"/register"} element={<Register />}/>
             <Route path={"/user"} element={<User />}/>
             <Route path={"/admin"} element={<div>myAdmin Page</div>}/>
             <Route path={"/cart"} element={<div>Cart Page</div>}/>
