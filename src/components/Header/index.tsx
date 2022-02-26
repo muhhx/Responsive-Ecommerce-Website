@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useMenu } from "../../context/menuContext";
 import { useTheme } from "../../context/themeContext";
 import { headerAssets } from "./data";
@@ -30,7 +31,9 @@ const Header: React.FC = () => {
                         <Icon src={isLight ? headerAssets.darkMode : headerAssets.lightMode} alt={headerAssets.modeAlt}/>
                     </Button>
                     <Button>
-                        <Icon src={isLight ? headerAssets.userDark : headerAssets.userLight} alt={headerAssets.userAlt}/>
+                        <Link to={"/user"}>
+                            <Icon src={isLight ? headerAssets.userDark : headerAssets.userLight} alt={headerAssets.userAlt}/>
+                        </Link>
                     </Button>
                     <Span>{headerAssets.spanBag} 0.00</Span>
                 </Wrapper>
