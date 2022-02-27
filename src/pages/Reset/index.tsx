@@ -1,34 +1,26 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { handleLogIn } from "../../config/firebase";
+import { handleReset } from "../../config/firebase";
 import { Link } from "react-router-dom";
 import { Container, FormWrapper, Section, Title, Form, Error, InputWrapper, InputArea, Input, Span, Button, OptionsWrapper, Option } from "./styles";
 
-const Login: React.FC = () => {
-    const [inputPassword, setInputPassword] = useState<string>("")
+const Reset: React.FC = () => {
     const [inputEmail, setInputEmail] = useState<string>("")
     const [error, setError] = useState<string | null>(null)
-    const navigate = useNavigate()
-
-    function resetInput() {
-        setInputEmail("")
-        setInputPassword("")
-    }
 
     async function handleSubmit(e: React.MouseEvent) {
         e.preventDefault()
 
-        if(inputEmail.length === 0 || inputPassword.length === 0) {
+        if(inputEmail.length === 0) {
             return setError("Preencha todos os campos.")
         }
 
         try {
             setError(null)
-            await handleLogIn(inputEmail, inputPassword)
-            resetInput()
-            navigate("/user")
+            await handleReset(inputEmail)
+            setInputEmail("")
+            setError("Email enviado, cheque seu inbox para mais instruções.")
         } catch {
-            return setError("Não foi possível logar sua conta. Verifique os campos digitados!")
+            return setError("Não foi possível resetar sua senha. Verifique os campos digitados!")
         }
     }
 
@@ -36,7 +28,7 @@ const Login: React.FC = () => {
         <Section>
             <Container>
                 <FormWrapper>
-                    <Title>LOGIN</Title>
+                    <Title>RESET</Title>
                     {error !== null ? <Error>{error}</Error> : ""}
                     <Form>
                         <InputWrapper>
@@ -46,18 +38,11 @@ const Login: React.FC = () => {
                             </InputArea>
                         </InputWrapper>
 
-                        <InputWrapper>
-                            <Span>Senha</Span>
-                            <InputArea>
-                                <Input type="password" onChange={(e) => setInputPassword(e.target.value)} value={inputPassword}/>
-                            </InputArea>
-                        </InputWrapper>
-
-                        <Button onClick={(e) => handleSubmit(e)}>Entrar</Button>
+                        <Button onClick={(e) => handleSubmit(e)}>Reset</Button>
                     </Form>
                     <OptionsWrapper>
-                        <Link to={"/reset"}>
-                            <Option>Esqueceu a senha?</Option>
+                        <Link to={"/login"}>
+                            <Option>Fazer Login</Option>
                         </Link>
                         <Link to={"/register"}>
                             <Option>Registrar-se</Option>
@@ -69,4 +54,4 @@ const Login: React.FC = () => {
     )
 }
 
-export default Login;
+export default Reset;

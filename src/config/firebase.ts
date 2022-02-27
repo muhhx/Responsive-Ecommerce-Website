@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"
 
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth"
 import { collection, addDoc } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -29,6 +29,10 @@ export const handleLogIn = ( email: string, password: string ) => {
 
 export const handleSignOut = () => {
     return signOut(auth);
+}
+
+export const handleReset = ( email: string ) => {
+    return sendPasswordResetEmail(auth, email)
 }
 
 interface ObjectData {

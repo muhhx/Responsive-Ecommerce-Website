@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import User from "../pages/User";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Reset from "../pages/Reset";
 
 const Routing: React.FC = () => { 
     return (
@@ -16,6 +17,7 @@ const Routing: React.FC = () => {
             <Route path={"/search"} element={<div>Search Page</div>}/>
             <Route path={"/login"} element={<Login />}/>
             <Route path={"/register"} element={<Register />}/>
+            <Route path={"/reset"} element={<Reset />}/>
             <Route element={<PrivateRoute />}>
                 <Route path={"/user"} element={<User />}/>
             </Route>

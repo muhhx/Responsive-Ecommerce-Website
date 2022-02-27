@@ -76,6 +76,9 @@ const Register: React.FC = () => {
                         <Button onClick={(e) => handleSubmit(e)}>Registrar</Button>
                     </Form>
                     <OptionsWrapper>
+                    <Link to={"/reset"}>
+                            <Option>Esqueceu a senha?</Option>
+                        </Link>
                         <Link to={"/login"}>
                             <Option>Fazer login</Option>
                         </Link>
