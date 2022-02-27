@@ -24,7 +24,9 @@ const Header: React.FC = () => {
                     <Span>{isOpen ? 'CLOSE' : 'SHOP'}</Span>
                 </Wrapper>
                 <LogoWrapper>
-                    <Span>{headerAssets.spanLogo}</Span>
+                    <Link to={"/"}>
+                        <Span>{headerAssets.spanLogo}</Span>
+                    </Link>
                 </LogoWrapper>
                 <Wrapper isMenu={false}>
                     <Button onClick={handleTheme}>

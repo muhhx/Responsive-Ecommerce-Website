@@ -1,7 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore"
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { collection, addDoc } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeBrDhyJODDTwRqMKt-7QieJqw01Tx48I",
@@ -14,7 +16,9 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 
+//Login, Signup and Signout
 export const handleSignUp = ( email: string, password: string ) => {
     return createUserWithEmailAndPassword(auth, email, password);
 }
@@ -25,4 +29,16 @@ export const handleLogIn = ( email: string, password: string ) => {
 
 export const handleSignOut = () => {
     return signOut(auth);
+}
+
+interface ObjectData {
+    email: string;
+    canBuy: boolean;
+    timestamp: Date;
+}
+
+//CRUD operations
+export const handleAdd = (docRef: string, object: ObjectData) => {
+    const colRef = collection(db, docRef)
+    return addDoc(colRef, object)
 }

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { handleSignUp } from "../../config/firebase";
-import { useUser } from "../../context/userContext";
+import { handleAdd } from "../../config/firebase"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Container, FormWrapper, Section, Title, Form, Error, InputWrapper, InputArea, Input, Span, Button, OptionsWrapper, Option } from "./styles";
@@ -10,14 +10,7 @@ const Register: React.FC = () => {
     const [inputConfirm, setInputConfirm] = useState<string>("")
     const [inputEmail, setInputEmail] = useState<string>("")
     const [error, setError] = useState<string | null>(null)
-    const { currentUser } = useUser()
     const navigate = useNavigate()
-    
-    useEffect(() => {
-        if(currentUser) {
-            navigate("/user")
-        }
-    }, [currentUser])
 
     function resetInput() {
         setInputEmail("")
@@ -43,7 +36,9 @@ const Register: React.FC = () => {
         try {
             setError(null)
             await handleSignUp(inputEmail, inputPassword)
+            await handleAdd("users", { email: inputEmail, canBuy: false, timestamp: new Date() })
             resetInput()
+            navigate("/user")
         } catch {
             return setError("Não foi possível criar sua conta. Verifique os campos digitados!")
         }

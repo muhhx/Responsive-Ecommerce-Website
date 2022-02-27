@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useUser } from "../../context/userContext";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { handleLogIn } from "../../config/firebase";
 import { Link } from "react-router-dom";
@@ -9,14 +8,7 @@ const Login: React.FC = () => {
     const [inputPassword, setInputPassword] = useState<string>("")
     const [inputEmail, setInputEmail] = useState<string>("")
     const [error, setError] = useState<string | null>(null)
-    const { currentUser } = useUser()
     const navigate = useNavigate()
-    
-    useEffect(() => {
-        if(currentUser) {
-            navigate("/user")
-        }
-    }, [currentUser])
 
     function resetInput() {
         setInputEmail("")
@@ -34,6 +26,7 @@ const Login: React.FC = () => {
             setError(null)
             await handleLogIn(inputEmail, inputPassword)
             resetInput()
+            navigate("/user")
         } catch {
             return setError("Não foi possível logar sua conta. Verifique os campos digitados!")
         }
