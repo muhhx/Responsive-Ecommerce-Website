@@ -1,5 +1,5 @@
 import { useUser } from "../context/userContext";
-import { Navigate, Outlet, Route } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 const PrivateRoute: React.FC = () => {
     const { currentUser } = useUser()

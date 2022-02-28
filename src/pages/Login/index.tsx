@@ -9,7 +9,7 @@ const Login: React.FC = () => {
     const [inputEmail, setInputEmail] = useState<string>("")
     const [error, setError] = useState<string | null>(null)
     const navigate = useNavigate()
-
+    
     function resetInput() {
         setInputEmail("")
         setInputPassword("")

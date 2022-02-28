@@ -3,7 +3,9 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth"
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, getDocs } from "firebase/firestore"
+
+import { UserDataInterface } from "../helpers/interfaces";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeBrDhyJODDTwRqMKt-7QieJqw01Tx48I",
@@ -35,14 +37,13 @@ export const handleReset = ( email: string ) => {
     return sendPasswordResetEmail(auth, email)
 }
 
-interface ObjectData {
-    email: string;
-    canBuy: boolean;
-    timestamp: Date;
-}
-
 //CRUD operations
-export const handleAdd = (docRef: string, object: ObjectData) => {
+export const handleAdd = (docRef: string, object: UserDataInterface) => {
     const colRef = collection(db, docRef)
     return addDoc(colRef, object)
+}
+
+export const handleGet = (docRef: string) => {
+    const colRef = collection(db, docRef)
+    return getDocs(colRef)
 }

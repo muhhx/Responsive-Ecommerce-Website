@@ -3,7 +3,9 @@ import { useUser } from "../../context/userContext";
 import { Section, Button } from "./styles";
 
 const User: React.FC = () => {
-    const { currentUser } = useUser()
+    const { currentUser, currentUserData } = useUser()
+
+    console.log(currentUserData)
 
     function handleLogout() {
         handleSignOut()
@@ -13,6 +15,7 @@ const User: React.FC = () => {
         <Section>
             <h1>Current Account: {currentUser?.email}</h1>
             <h1>UID: {currentUser?.uid}</h1>
+            <h1>Role: {currentUserData?.userRole}</h1>
             <Button onClick={handleLogout}>Signout</Button>
         </Section>
     )

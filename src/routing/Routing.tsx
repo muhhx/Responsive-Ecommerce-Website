@@ -1,12 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 
-//Page components
+//Private Routes
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import LoggedRoute from "./LoggedRoute";
+
+//Page components
 import Home from "../pages/Home";
-import User from "../pages/User";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Reset from "../pages/Reset";
+import User from "../pages/User";
+import Admin from "../pages/Admin";
 
 const Routing: React.FC = () => { 
     return (
@@ -15,13 +20,24 @@ const Routing: React.FC = () => {
             <Route path={"/shop"} element={<div>Shop Page</div>}/>
             <Route path={"/product"} element={<div>Product Page</div>}/>
             <Route path={"/search"} element={<div>Search Page</div>}/>
-            <Route path={"/login"} element={<Login />}/>
-            <Route path={"/register"} element={<Register />}/>
-            <Route path={"/reset"} element={<Reset />}/>
+
+            <Route element={<LoggedRoute />}>
+                <Route path={"/login"} element={<Login />}/>
+            </Route>
+            <Route element={<LoggedRoute />}>
+                <Route path={"/register"} element={<Register />}/>
+            </Route>
+            <Route element={<LoggedRoute />}>
+                <Route path={"/reset"} element={<Reset />}/>
+            </Route>
+
             <Route element={<PrivateRoute />}>
                 <Route path={"/user"} element={<User />}/>
             </Route>
-            <Route path={"/admin"} element={<div>myAdmin Page</div>}/>
+            <Route element={<AdminRoute />}>
+                <Route path={"/admin"} element={<Admin />}/>
+            </Route>
+            
             <Route path={"/cart"} element={<div>Cart Page</div>}/>
             <Route path={"/payment"} element={<div>Payment Page</div>}/>
             <Route path={"*"} element={<div>404 Page</div>}/>

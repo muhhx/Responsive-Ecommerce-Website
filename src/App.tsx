@@ -1,10 +1,11 @@
 import { useMenu } from './context/menuContext';
 import { useTheme } from './context/themeContext';
+import { useUser } from './context/userContext';
 
 //Components
+import AdminHeader from './components/AdminHeader';
 import Header from './components/Header';
 import Routing from './routing/Routing';
-import Footer from './components/Footer';
 import Menu from './components/Menu';
 
 //Styling
@@ -43,12 +44,14 @@ const themeDark = {
 }
 
 const App: React.FC = () => {
+  const { currentUserData } = useUser()
   const { isLight } = useTheme()
   const { isOpen } = useMenu()
 
   return (
     <ThemeProvider theme={isLight ? themeLight : themeDark}>
       {isOpen ? <Menu /> : ''}
+      {currentUserData?.userRole === "admin" ? <AdminHeader /> : ''}
       <Header />
       <Main>
         <Routing />
