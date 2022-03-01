@@ -26,5 +26,4 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.color.fontMain};
     font-family: 'Jost', sans-serif;
     font-size: 12px;
-    font-weight: 400;
 `;

@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { UserProvider } from './context/userContext'
 import { MenuProvider } from './context/menuContext'
 import { ThemeProvider } from './context/themeContext'
+import { ProductProvider } from './context/productContext'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,7 +16,9 @@ ReactDOM.render(
       <BrowserRouter>
         <ThemeProvider>
           <MenuProvider>
-            <App />
+            <ProductProvider>
+              <App />
+            </ProductProvider>
           </MenuProvider>
         </ThemeProvider>
       </BrowserRouter>

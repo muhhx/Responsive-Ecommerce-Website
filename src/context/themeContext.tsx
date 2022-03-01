@@ -1,8 +1,5 @@
 import { useState, useContext, createContext, ReactNode } from "react";
-
-interface Props {
-    children: ReactNode;
-}
+import { Props } from "../helpers/interfaces"
 
 interface Values {
     isLight: boolean;

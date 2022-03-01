@@ -1,11 +1,8 @@
+import { useState, useContext, useEffect, createContext, ReactNode, SetStateAction } from "react"
 import { handleGet } from "../config/firebase"
 import { auth } from "../config/firebase"
-import { useState, useContext, useEffect, createContext, ReactNode, SetStateAction } from "react"
 import { User } from "firebase/auth"
-
-interface Props {
-    children: ReactNode;
-}
+import { Props } from "../helpers/interfaces"
 
 interface Value {
     currentUser: User | null;

@@ -16,6 +16,10 @@ const Header: React.FC = () => {
         setIsOpen(isOpen === false ? true : false)
     }
 
+    function handlePageChange() {
+        setIsOpen(false)
+    }
+
     return (
         <Section>
             <Container>
@@ -25,7 +29,7 @@ const Header: React.FC = () => {
                 </Wrapper>
                 <LogoWrapper>
                     <Link to={"/"}>
-                        <Span>{headerAssets.spanLogo}</Span>
+                        <Span onClick={handlePageChange}>{headerAssets.spanLogo}</Span>
                     </Link>
                 </LogoWrapper>
                 <Wrapper isMenu={false}>
@@ -33,11 +37,11 @@ const Header: React.FC = () => {
                         <Icon src={isLight ? headerAssets.darkMode : headerAssets.lightMode} alt={headerAssets.modeAlt}/>
                     </Button>
                     <Button>
-                        <Link to={"/user"}>
+                        <Link to={"/user"} onClick={handlePageChange}>
                             <Icon src={isLight ? headerAssets.userDark : headerAssets.userLight} alt={headerAssets.userAlt}/>
                         </Link>
                     </Button>
-                    <Span>{headerAssets.spanBag} 0.00</Span>
+                    <Span onClick={handlePageChange}>{headerAssets.spanBag} 0.00</Span>
                 </Wrapper>
             </Container>
         </Section>

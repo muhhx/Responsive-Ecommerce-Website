@@ -34,7 +34,6 @@ export const Title = styled.h1`
     font-weight: 500;
     letter-spacing: max(-10px, -3vw);
     line-height: .8;
-
 `;
 
 export const Form = styled.form`
@@ -81,7 +80,7 @@ export const Input = styled.input`
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     outline: none;
-    `;
+`;
 
 export const Button = styled.button`
     width: 100%;

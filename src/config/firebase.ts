@@ -43,6 +43,11 @@ export const handleAdd = (docRef: string, object: UserDataInterface) => {
     return addDoc(colRef, object)
 }
 
+export const handleAddProduct = (docRef: string, object: any) => {
+    const colRef = collection(db, docRef)
+    return addDoc(colRef, object)
+}
+
 export const handleGet = (docRef: string) => {
     const colRef = collection(db, docRef)
     return getDocs(colRef)

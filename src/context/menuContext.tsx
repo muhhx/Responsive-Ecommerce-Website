@@ -1,8 +1,5 @@
 import { useState, createContext, ReactNode, useContext } from "react";
-
-interface Props {
-    children: ReactNode;
-}
+import { Props } from "../helpers/interfaces"
 
 interface Values {
     isOpen: boolean;
