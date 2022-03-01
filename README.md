@@ -1,0 +1,1 @@
+Adicionar uma interface para a função handleAddProducts no firebase config

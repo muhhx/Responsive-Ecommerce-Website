@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { handleAddProduct } from "../../../config/firebase"; 
 import { Container, Title, BooleanWrapper, BooleanOption, Span, Button, Wrapper, Error } from "./styles";
-import Input from "../../../components/Forms/Input"
+import Input from "../../../components/Forms/Input";
+import Colors from "./Colors";
 
-interface Color {
+export interface Color {
     colorName: string;
     colorRgb: string;
     images: string[];
     sizes: string[];
+}
+
+const defaultColor = {
+    colorName: "",
+    colorRgb: "",
+    images: [],
+    sizes: [],
 }
 
 const AddProduct: React.FC = () => {
@@ -22,7 +30,8 @@ const AddProduct: React.FC = () => {
     const [discountInput, setDiscountInput] = useState<string>("") //Converter pra number
     const [isAvailableInput, setIsAvailableInput] = useState<boolean>(true)
     const [isNewInput, setIsNewInput] = useState<boolean>(true)
-    const [colorsInput, setColorsInput] = useState<Color[]>([])
+    const [colorsInput, setColorsInput] = useState<Color[]>([defaultColor])
+    const [currentColor, setCurrentColor] = useState<number>(0)
     const [error, setError] = useState<string | null>(null)
 
     function handleGenderOptions(value: string) {
@@ -32,7 +41,7 @@ const AddProduct: React.FC = () => {
             setGenderInput([...genderInput, value])
         }
     }
-
+console.log(colorsInput, currentColor)
     function resetInputs() {
         setNameInput("")
         setRefInput("")
@@ -51,7 +60,7 @@ const AddProduct: React.FC = () => {
         const priceConverted = Number(priceInput)
         const discountConverted = Number(discountInput)
 
-        if(nameInput.length === 0 || refInput.length === 0 || descriptionInput.length === 0 || categoryInput.length === 0 || priceInput.length === 0) {
+        if(nameInput.length === 0 || refInput.length === 0 || descriptionInput.length === 0 || categoryInput.length === 0 || priceInput.length === 0 || colorsInput.length === 0) {
             return setError("Preencha todos os campos.")
         }
 
@@ -67,10 +76,12 @@ const AddProduct: React.FC = () => {
             name: nameInput,
             description: descriptionInput,
             ref: refInput,
+            imageThumb: "definir",
             display: true,
             category: categoryInput,
             collection: collectionInput,
             gender: genderInput,
+            colors: colorsInput,
             pricing: {
                 price: priceConverted,
                 discountPrice: hasDiscountInput === true ? discountConverted : 0
@@ -106,26 +117,35 @@ const AddProduct: React.FC = () => {
                 <Input span={"Price (numero inteiro)"} state={priceInput} setState={setPriceInput}/>
                 <BooleanWrapper>
                     <Span>Possui disconto:</Span> 
-                    <BooleanOption onClick={() => setHasDiscountInput(true)} status={hasDiscountInput === true ? true : false}>Sim</BooleanOption>
-                    <BooleanOption onClick={() => setHasDiscountInput(false)} status={hasDiscountInput === false ? true : false}>Não</BooleanOption>
+                    <BooleanOption onClick={() => setHasDiscountInput(true)} status={hasDiscountInput === true ? true : false}>SIM</BooleanOption>
+                    <BooleanOption onClick={() => setHasDiscountInput(false)} status={hasDiscountInput === false ? true : false}>NÃO</BooleanOption>
                 </BooleanWrapper>
                 {hasDiscountInput ? <Input span={"Discount Price"} state={discountInput} setState={setDiscountInput}/> : ""}
                 <BooleanWrapper>
                     <Span>É produto novo:</Span> 
-                    <BooleanOption onClick={() => setIsNewInput(true)} status={isNewInput === true ? true : false}>Sim</BooleanOption>
-                    <BooleanOption onClick={() => setIsNewInput(false)} status={isNewInput === false ? true : false}>Não</BooleanOption>
+                    <BooleanOption onClick={() => setIsNewInput(true)} status={isNewInput === true ? true : false}>SIM</BooleanOption>
+                    <BooleanOption onClick={() => setIsNewInput(false)} status={isNewInput === false ? true : false}>NÃO</BooleanOption>
                 </BooleanWrapper>
                 <BooleanWrapper>
                     <Span>Está disponível:</Span> 
-                    <BooleanOption onClick={() => setIsAvailableInput(true)} status={isAvailableInput === true ? true : false}>Sim</BooleanOption>
-                    <BooleanOption onClick={() => setIsAvailableInput(false)} status={isAvailableInput === false ? true : false}>Não</BooleanOption>
+                    <BooleanOption onClick={() => setIsAvailableInput(true)} status={isAvailableInput === true ? true : false}>SIM</BooleanOption>
+                    <BooleanOption onClick={() => setIsAvailableInput(false)} status={isAvailableInput === false ? true : false}>NÃO</BooleanOption>
                 </BooleanWrapper>
                 <BooleanWrapper>
                     <Span>Generos:</Span> 
-                    <BooleanOption onClick={() => handleGenderOptions("men")} status={genderInput.includes("men") ? true : false}>Homem</BooleanOption>
-                    <BooleanOption onClick={() => handleGenderOptions("woman")} status={genderInput.includes("woman") ? true : false}>Mulher</BooleanOption>
+                    <BooleanOption onClick={() => handleGenderOptions("men")} status={genderInput.includes("men") ? true : false}>MEN</BooleanOption>
+                    <BooleanOption onClick={() => handleGenderOptions("woman")} status={genderInput.includes("woman") ? true : false}>WOMEN</BooleanOption>
                 </BooleanWrapper>
-                <div>Colors</div>
+                <BooleanWrapper>
+                    <Span>Cores:</Span> 
+                    {colorsInput.map((color, key) => (
+                        <BooleanOption key={key} onClick={() => setCurrentColor(key)} status={currentColor === key ? true : false}>Color 0{key + 1}</BooleanOption>
+                    ))}
+                </BooleanWrapper>
+                {colorsInput.map((color, key) => (
+                    <Colors key={key} index={key} colorsInput={colorsInput} setColorsInput={setColorsInput} setError={setError} currentColor={currentColor}/>
+                ))}
+                <Button onClick={() => setColorsInput([...colorsInput, defaultColor])}>Adicionar Cor</Button>
                 <Button onClick={handleSubmit}>Criar Produto</Button>
             </Wrapper>
         </Container>
