@@ -11,7 +11,6 @@ export const Container = styled.div`
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
-    margin: 50px 0px;
 `;
 
 export const Title = styled.h1`

@@ -18,7 +18,6 @@ export const Wrapper = styled.div`
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 `;
 
 export const Title = styled.h1`
@@ -64,4 +63,13 @@ export const Error = styled.p`
     color: ${({ theme }) => theme.color.fontOrange};
     text-align: center;
     font-size: 1.2rem;
+`;
+
+export const ContentWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0px;
+    gap: 10px;
+    align-items: center;
 `;

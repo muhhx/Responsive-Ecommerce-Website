@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { useProduct } from "../../context/productContext";
 import { Container, Section, Header, Title, Options, Button } from "./styles";
 import AddProduct from "./AddProduct"
+import EditProduct from "./EditProduct"
 
 const Admin: React.FC = () => {
     const [currentPage, setCurrentPage] = useState<number>(0)
-    const { products } = useProduct()
-
-    console.log(products)
 
     return (
         <Section>
@@ -22,7 +19,7 @@ const Admin: React.FC = () => {
                         <Button onClick={() => setCurrentPage(4)} isSelected={currentPage === 4 ? true : false}>Pedidos</Button>
                     </Options>
                 </Header>
-                {currentPage === 0 ? <div>Editar produtos (deletar, editar info)</div> : ""}
+                {currentPage === 0 ? <EditProduct /> : ""}
                 {currentPage === 1 ? <AddProduct /> : ""}
                 {currentPage === 2 ? <div>Editar coleções</div> : ""}
                 {currentPage === 3 ? <div>Adicionar coleções</div> : ""}
