@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
-export interface Props {
+export type Props = {
     children: ReactNode;
 }
 
-export interface UserDataInterface {
+export type UserDataInterface = {
     email: string;
     canBuy: boolean;
     timestamp: Date;

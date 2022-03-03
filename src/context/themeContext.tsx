@@ -1,5 +1,5 @@
 import { useState, useContext, createContext, ReactNode } from "react";
-import { Props } from "../helpers/interfaces"
+import { Props } from "../types/interfaces"
 
 interface Values {
     isLight: boolean;

@@ -1,2 +1,3 @@
 Adicionar uma interface para a função handleAddProducts no firebase config
-Solução problemas add imagemm async: adicionar botao em cada imagem individual para enviar. quando envia, faz toda função async e retorna url/88uu
+Melhorar a modularização do código (services)
+Fazer add product mobile

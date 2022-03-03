@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth"
 import { collection, addDoc, getDocs } from "firebase/firestore"
 
-import { UserDataInterface } from "../helpers/interfaces";
+import { UserDataInterface } from "../types/interfaces";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeBrDhyJODDTwRqMKt-7QieJqw01Tx48I",

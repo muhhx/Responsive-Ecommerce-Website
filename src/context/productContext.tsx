@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { Props } from "../helpers/interfaces";
+import { Props } from "../types/interfaces";
 import { handleGet } from "../config/firebase";
 
 interface Values {

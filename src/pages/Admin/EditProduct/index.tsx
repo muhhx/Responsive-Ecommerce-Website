@@ -6,9 +6,14 @@ const EditProduct: React.FC = () => {
 
     return (
         <Container>
-            {products.map(product => <span>Teste</span>)}
+            {products.map((product, index) => <span key={index}>Teste</span>)}
         </Container>
     )
 }
 
 export default EditProduct;
+
+//Editar informações básicas
+//Deletar Produto
+//Informações importantes CONDITIONS, colocar acesso rapido, sem precisar entrar na página do produto pra editar: isAvailable, Display, isNew, hasDiscount, genders
+//N vai poder adicionar ou deletar imagem, só mudar o thumb

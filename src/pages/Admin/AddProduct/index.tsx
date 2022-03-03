@@ -91,9 +91,9 @@ const AddProduct: React.FC = () => {
             ref: refInput,
             imageThumb: colorsInput[thumbInput[0]].images[thumbInput[1]],
             display: true,
-            category: categoryInput,
-            collection: collectionInput,
-            gender: genderInput,
+            category: categoryInput.toLowerCase(),
+            collection: collectionInput.toLowerCase(),
+            gender: [...genderInput, "all"],
             colors: colorsInput,
             pricing: {
                 price: priceConverted,
@@ -148,7 +148,7 @@ const AddProduct: React.FC = () => {
                     <BooleanWrapper>
                         <Span>Generos:</Span> 
                         <BooleanOption onClick={() => handleGenderOptions("men")} status={genderInput.includes("men") ? true : false}>MEN</BooleanOption>
-                        <BooleanOption onClick={() => handleGenderOptions("woman")} status={genderInput.includes("woman") ? true : false}>WOMEN</BooleanOption>
+                        <BooleanOption onClick={() => handleGenderOptions("women")} status={genderInput.includes("women") ? true : false}>WOMEN</BooleanOption>
                     </BooleanWrapper>
                 </ContentWrapper>
                 <ContentWrapper>

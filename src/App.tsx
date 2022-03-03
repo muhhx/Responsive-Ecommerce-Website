@@ -10,7 +10,7 @@ import Routing from './routing/Routing';
 import Menu from './components/Menu';
 
 //Styling
-import { themeDark, themeLight } from './helpers/themes';
+import { themeDark, themeLight } from './types/themes';
 import { Main, GlobalStyle } from './globalStyles';
 import { ThemeProvider } from 'styled-components';
 import './default.css'
