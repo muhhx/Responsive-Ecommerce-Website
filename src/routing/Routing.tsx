@@ -8,6 +8,7 @@ import LoggedRoute from "./LoggedRoute";
 //Page components
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
+import Product from "../pages/Product";
 
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -20,8 +21,7 @@ const Routing: React.FC = () => {
         <Routes>
             <Route path={"/"} element={<Home />}/>
             <Route path={"/shop"} element={<Shop />}/>
-            <Route path={"/product"} element={<div>Product Page</div>}/>
-            <Route path={"/search"} element={<div>Search Page</div>}/>
+            <Route path={"/product/:id"} element={<Product />}/>
 
             <Route element={<LoggedRoute />}>
                 <Route path={"/login"} element={<Login />}/>

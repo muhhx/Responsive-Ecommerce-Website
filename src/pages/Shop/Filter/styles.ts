@@ -24,3 +24,7 @@ export const Option = styled.button`
     text-transform: uppercase;
     cursor: pointer;
 `;
+
+export const Range = styled.input`
+    width: 100px;
+`;

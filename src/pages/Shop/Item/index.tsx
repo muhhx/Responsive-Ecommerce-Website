@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Product } from "../../../types/product";
 import * as C from "./styles";
 
@@ -6,14 +7,14 @@ type Props = {
 }
 
 const Item: React.FC<Props> = ({ product }) => {
-    
     return (
+        <Link to={`/product/${product.id}`}>
         <C.Container>
-            <C.ImageWrapper>
-                {product.conditions.isNew ? <C.NewWrapper>NEW</C.NewWrapper> : ''}
-                {!product.conditions.isAvailable ? <C.AvailableWrapper>SOLD OUT!</C.AvailableWrapper> : ''}
-                <C.Image src={product.imageThumb} alt="Product image"/>
-            </C.ImageWrapper>
+                <C.ImageWrapper>
+                    {product.conditions.isNew ? <C.NewWrapper>NEW</C.NewWrapper> : ''}
+                    {!product.conditions.isAvailable ? <C.AvailableWrapper>SOLD OUT!</C.AvailableWrapper> : ''}
+                    <C.Image src={product.imageThumb} alt="Product image"/>
+                </C.ImageWrapper>
             <C.DescriptionWrapper>
                 <C.Name>{product.name}</C.Name>
 
@@ -24,6 +25,7 @@ const Item: React.FC<Props> = ({ product }) => {
 
             </C.DescriptionWrapper>
         </C.Container>
+        </Link>
     )
 }
 

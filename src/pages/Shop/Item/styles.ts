@@ -5,7 +5,7 @@ type Props = {
 }
 
 export const Container = styled.div`
-    width: 200px;
+    width: 100%;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@ export const AvailableWrapper = styled.div`
     display: flex;
     justify-content: center;
     background-color: ${({ theme }) => theme.color.backgroundMain};
-    color: white;
+    color: ${({ theme }) => theme.color.reverseColor};
     padding: 0px 8px;
     position: absolute;
     bottom: 5px;
