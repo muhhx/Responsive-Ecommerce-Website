@@ -39,6 +39,8 @@ export const InformationContainer = styled.div`
 
     @media only screen and (max-width: 900px) {
         position: initial;
+        height: auto;
+        padding: 50px 0px;
     }
 `;
 
