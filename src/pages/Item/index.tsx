@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { useProduct } from "../../context/productContext";
 import { useCart } from "../../context/cartContext";
+import { useUser } from "../../context/userContext";
+
+import { addFavProduct } from "../../services/user";
 import { Product } from "../../types/product";
 import * as C from "./styles";
 
@@ -13,8 +18,10 @@ const Item: React.FC = () => {
     const [error, setError] = useState<string | null>(null)
 
     const { products } = useProduct()
+    const { currentUserData } = useUser()
     const { addCart } = useCart()
     const location = useLocation()
+    const navigate = useNavigate()
     
     useEffect(() => {
         const productId = location.pathname.split('').slice(9).join('')
@@ -34,6 +41,19 @@ const Item: React.FC = () => {
 
         if(currentProduct)
             addCart(currentProduct, currentProduct.colors[currentColor].colorName, currentSize)
+    }
+
+    async function handleAddFav() {
+        if(currentUserData && currentUserData?.id && currentProduct?.id) {
+            try {
+                setError(null)
+                await addFavProduct(currentUserData.id, currentProduct.id)
+                navigate("/user")
+            } catch(err) {
+                setError("Não foi possível adicionar o produto ao seus favoritos")
+            }
+        } else
+            navigate("/login")
     }
 
     return (
@@ -74,7 +94,7 @@ const Item: React.FC = () => {
                     <C.Divider>
                         <C.Wrapper>
                             {currentProduct?.conditions.isAvailable ? <C.Button onClick={handleAddCart}>Adicionar ao carrinho</C.Button> : <C.Esgotado>Produto esgotado</C.Esgotado>}
-                            <C.Button>Adicionar a lista de desejos</C.Button>
+                            <C.Button onClick={handleAddFav}>Adicionar a lista de desejos</C.Button>
                         </C.Wrapper>
                     </C.Divider>
                 </C.InformationWrapper>
