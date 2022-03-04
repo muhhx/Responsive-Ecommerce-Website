@@ -6,7 +6,9 @@ type Props = {
 
 export const Container = styled.div`
     width: 100%;
-    min-height: 50px;
+    border-top: solid 1px ${({ theme }) => theme.color.fontMain};
+    border-bottom: solid 1px ${({ theme }) => theme.color.fontMain};
+    padding: 20px 0px;
 `;
 
 export const Row = styled.div`

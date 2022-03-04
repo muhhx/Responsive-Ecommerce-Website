@@ -2,7 +2,7 @@ import { useState, useContext, useEffect, createContext, ReactNode, SetStateActi
 import { handleGet } from "../config/firebase"
 import { auth } from "../config/firebase"
 import { User } from "firebase/auth"
-import { Props } from "../types/interfaces"
+import { Props } from "../types/contexts"
 
 interface Value {
     currentUser: User | null;

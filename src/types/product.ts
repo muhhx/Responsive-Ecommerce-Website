@@ -23,5 +23,6 @@ export type Product = {
         isAvailable: boolean,
         isNew: boolean
     },
-    colors: Color[]
+    colors: Color[],
+    id?: string
 };

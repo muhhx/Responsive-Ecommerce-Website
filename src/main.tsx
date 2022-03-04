@@ -9,6 +9,7 @@ import { UserProvider } from './context/userContext'
 import { MenuProvider } from './context/menuContext'
 import { ThemeProvider } from './context/themeContext'
 import { ProductProvider } from './context/productContext'
+import { CartProvider } from './context/cartContext'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,7 +18,9 @@ ReactDOM.render(
         <ThemeProvider>
           <MenuProvider>
             <ProductProvider>
-              <App />
+              <CartProvider>
+                <App />
+              </CartProvider>
             </ProductProvider>
           </MenuProvider>
         </ThemeProvider>

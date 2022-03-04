@@ -61,7 +61,7 @@ const Shop: React.FC = () => {
                     <C.Control>
                         <C.Wrapper>
                             {filterInputs.genders.map((gender, i) => (
-                                <C.GenderWrapper onClick={() => setGenderFilter(gender)}>
+                                <C.GenderWrapper onClick={() => setGenderFilter(gender)} key={i}>
                                     <C.Option isClicked={genderFilter === gender ? true : false}>{gender}</C.Option>
                                     <C.Quantity>{genderQuantity[i]}</C.Quantity>
                                 </C.GenderWrapper>
