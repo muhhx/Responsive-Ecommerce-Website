@@ -1,12 +1,14 @@
-import { useState, useContext, useEffect, createContext, ReactNode, SetStateAction } from "react"
+import { useState, useContext, useEffect, createContext } from "react"
 import { handleGet } from "../config/firebase"
 import { auth } from "../config/firebase"
 import { User } from "firebase/auth"
+
 import { Props } from "../types/contexts"
+import { UserData } from "../types/user"
 
 interface Value {
     currentUser: User | null;
-    currentUserData: any;
+    currentUserData: UserData | null;
 }
 
 const initialValue = {
@@ -21,21 +23,26 @@ export const useUser = () => {
 }
 
 export const UserProvider: React.FC<Props> = ({ children }) => {
+    const [currentUserData, setCurrentUserData] = useState<UserData | null>(null)
     const [currentUser, setCurrentUser] = useState<User | null>(null)
-    const [currentUserData, setCurrentUserData] = useState<any>(null)
+    const [allUsers, setAllUsers] = useState<any[]>([])
 
     useEffect(() => {
-        async function handleUserData() {
+        async function getUsers() {
+            const response = await handleGet("users")
+            const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id}))
+            setAllUsers(data)
+        }
+        getUsers()
+    }, [])
+
+    useEffect(() => {
             if(currentUser !== null) {
-                const response = await handleGet("users")
-                const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id}))
-                const final = data.filter(userData => userData.email === currentUser.email)[0]
+                const final = allUsers.filter(userData => userData.email === currentUser.email)[0]
                 setCurrentUserData(final)
             } else {
                 setCurrentUserData(null)
             }
-        }
-        handleUserData()
     }, [currentUser])
 
     useEffect(() => {

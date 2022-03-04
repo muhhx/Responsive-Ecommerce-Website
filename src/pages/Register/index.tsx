@@ -36,7 +36,7 @@ const Register: React.FC = () => {
         try {
             setError(null)
             await handleSignUp(inputEmail, inputPassword)
-            await handleAdd("users", { email: inputEmail, canBuy: false, timestamp: new Date(), userRole: "user" })
+            await handleAdd("users", { email: inputEmail, canBuy: false, timestamp: new Date(), userRole: "user", favorites: [] })
             resetInput()
             navigate("/user")
         } catch {

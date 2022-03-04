@@ -4,7 +4,7 @@ import { Props } from "../types/contexts";
 
 type CartProduct = {
     product: Product,
-    colorIndex: number,
+    color: string,
     size: string,
     quantity: number,
     cartId: number
@@ -12,7 +12,7 @@ type CartProduct = {
 
 type Cart = {
     cart: CartProduct[];
-    addCart: (product: Product, color: number, size: string) => void
+    addCart: (product: Product, color: string, size: string) => void
 }
 
 const initialValue = {
@@ -29,10 +29,10 @@ export const useCart = () => {
 export const CartProvider: React.FC<Props> = ({ children }) => {
     const [cart, setCart] = useState<CartProduct[]>(initialValue.cart)
 
-    function addCart(product: Product, color: number, size: string) {
+    function addCart(product: Product, color: string, size: string) {
         const productObject: CartProduct = {
             product,
-            colorIndex: color,
+            color,
             size,
             quantity: 1,
             cartId: Math.random()
@@ -43,7 +43,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
         else {
             let contador = 0
             cart.forEach(cartProduct => {
-                if(cartProduct.product.id === product.id && cartProduct.colorIndex === color && cartProduct.size === size) {
+                if(cartProduct.product.id === product.id && cartProduct.color === color && cartProduct.size === size) {
                     return cartProduct.quantity++
                 }
                 contador++

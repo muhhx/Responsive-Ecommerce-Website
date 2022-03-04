@@ -15,7 +15,7 @@ const Item: React.FC = () => {
     const { products } = useProduct()
     const { addCart } = useCart()
     const location = useLocation()
-
+    
     useEffect(() => {
         const productId = location.pathname.split('').slice(9).join('')
         setCurrentProduct(products.filter(product => product.id === productId)[0])
@@ -33,7 +33,7 @@ const Item: React.FC = () => {
             return setError("Selecione um tamanho para continuar")
 
         if(currentProduct)
-            addCart(currentProduct, currentColor, currentSize)
+            addCart(currentProduct, currentProduct.colors[currentColor].colorName, currentSize)
     }
 
     return (

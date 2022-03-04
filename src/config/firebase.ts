@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth"
 import { collection, addDoc, getDocs } from "firebase/firestore"
 
-import { UserDataInterface } from "../types/user";
+import { UserData } from "../types/user";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBeBrDhyJODDTwRqMKt-7QieJqw01Tx48I",
@@ -40,7 +40,7 @@ export const handleReset = ( email: string ) => {
 }
 
 //CRUD operations
-export const handleAdd = (docRef: string, object: UserDataInterface) => {
+export const handleAdd = (docRef: string, object: UserData) => {
     const colRef = collection(db, docRef)
     return addDoc(colRef, object)
 }
