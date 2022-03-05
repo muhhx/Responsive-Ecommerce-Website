@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useMenu } from "../../context/menuContext";
 import { useTheme } from "../../context/themeContext";
+import { useMenu } from "../../context/menuContext";
+import { useCart } from "../../context/cartContext";
 import { headerAssets } from "./data";
 import { Button, Container, Icon, Menu, Section, Span, Wrapper, LogoWrapper } from "./styles"
 
 const Header: React.FC = () => {
     const { isLight, setIsLight } = useTheme()
     const { isOpen, setIsOpen } = useMenu()
+    const { cart } = useCart()
 
     function handleTheme() {
         setIsLight(isLight === true ? false : true)
@@ -41,7 +43,9 @@ const Header: React.FC = () => {
                             <Icon src={isLight ? headerAssets.userDark : headerAssets.userLight} alt={headerAssets.userAlt}/>
                         </Link>
                     </Button>
-                    <Span onClick={handlePageChange}>{headerAssets.spanBag} 0.00</Span>
+                    <Link to={"/cart"}>
+                        <Span onClick={handlePageChange}>{headerAssets.spanBag} ({cart.length})</Span>
+                    </Link>
                 </Wrapper>
             </Container>
         </Section>

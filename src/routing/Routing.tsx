@@ -9,6 +9,7 @@ import LoggedRoute from "./LoggedRoute";
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import Item from "../pages/Item";
+import Cart from "../pages/Cart";
 
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -40,7 +41,7 @@ const Routing: React.FC = () => {
                 <Route path={"/admin"} element={<Admin />}/>
             </Route>
             
-            <Route path={"/cart"} element={<div>Cart Page</div>}/>
+            <Route path={"/cart"} element={<Cart />}/>
             <Route path={"/payment"} element={<div>Payment Page</div>}/>
             <Route path={"*"} element={<div>404 Page</div>}/>
         </Routes>

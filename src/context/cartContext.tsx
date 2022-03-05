@@ -1,14 +1,7 @@
 import { createContext, useContext, useState } from "react";
+import { CartProduct } from "../types/product";
 import { Product } from "../types/product";
 import { Props } from "../types/contexts";
-
-type CartProduct = {
-    product: Product,
-    color: string,
-    size: string,
-    quantity: number,
-    cartId: number
-}
 
 type Cart = {
     cart: CartProduct[];

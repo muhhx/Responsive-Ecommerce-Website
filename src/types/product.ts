@@ -26,3 +26,11 @@ export type Product = {
     colors: Color[],
     id?: string
 };
+
+export type CartProduct = {
+    product: Product,
+    color: string,
+    size: string,
+    quantity: number,
+    cartId: number
+}
