@@ -34,7 +34,7 @@ export const UserProvider: React.FC<Props> = ({ children }) => {
             setAllUsers(data)
         }
         getUsers()
-    }, [])
+    }, [currentUser])
 
     useEffect(() => {
             if(currentUser !== null) {
@@ -43,7 +43,7 @@ export const UserProvider: React.FC<Props> = ({ children }) => {
             } else {
                 setCurrentUserData(null)
             }
-    }, [currentUser])
+    }, [currentUser, allUsers])
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {

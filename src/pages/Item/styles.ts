@@ -62,8 +62,9 @@ export const Category = styled.span`
 
 export const Title = styled.h1`
     color: ${({ theme }) => theme.color.fontMain};
+    font-family: ${({ theme }) => theme.font.fontTerciary};
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
     line-height: 1;
 `;
@@ -167,6 +168,7 @@ export const Esgotado = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    color: ${({ theme }) => theme.color.reverseColor};
 `;
 
 export const Divider = styled.div`

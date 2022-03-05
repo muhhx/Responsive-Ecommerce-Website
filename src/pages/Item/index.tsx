@@ -17,8 +17,8 @@ const Item: React.FC = () => {
 
     const [error, setError] = useState<string | null>(null)
 
-    const { products } = useProduct()
     const { currentUserData } = useUser()
+    const { products } = useProduct()
     const { addCart } = useCart()
     const location = useLocation()
     const navigate = useNavigate()
@@ -91,12 +91,14 @@ const Item: React.FC = () => {
                             ))}
                         </C.OptionsWrapper>
                     </C.Divider>
-                    <C.Divider>
-                        <C.Wrapper>
-                            {currentProduct?.conditions.isAvailable ? <C.Button onClick={handleAddCart}>Adicionar ao carrinho</C.Button> : <C.Esgotado>Produto esgotado</C.Esgotado>}
-                            <C.Button onClick={handleAddFav}>Adicionar a lista de desejos</C.Button>
-                        </C.Wrapper>
-                    </C.Divider>
+                    {!currentProduct?.display ? '' :
+                        <C.Divider>
+                            <C.Wrapper>
+                                {currentProduct?.conditions.isAvailable ? <C.Button onClick={handleAddCart}>Adicionar ao carrinho</C.Button> : <C.Esgotado>Produto esgotado</C.Esgotado>}
+                                <C.Button onClick={handleAddFav}>Adicionar a lista de desejos</C.Button>
+                            </C.Wrapper>
+                        </C.Divider>
+                    }
                 </C.InformationWrapper>
             </C.InformationContainer>
         </C.Section>

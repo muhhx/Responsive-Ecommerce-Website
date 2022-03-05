@@ -8,6 +8,19 @@ export const GlobalStyle = createGlobalStyle`
     body {
         overflow: ${( props: Props) => props.isOpen === true ? 'hidden' : 'initial'}
     }
+
+    ::-webkit-scrollbar {
+        height: 8px;
+        width: 0px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.color.fontMain};
+    }
 `;
 
 export const Main = styled.main`

@@ -51,7 +51,7 @@ export const Options = styled.div`
         flex-direction: column;
         width: 100%;
     }
-    `;
+`;
 
 export const Button = styled.button`
     background-color: transparent;

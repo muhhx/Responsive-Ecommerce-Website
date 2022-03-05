@@ -1,5 +1,11 @@
 Adicionar uma interface para a função handleAddProducts no firebase config
 Melhorar a modularização do código (services)
 
-Aprensetar um aviso que o produto foi add ao carrinho ou redirecionar para carrinho
-fazer funcionalidade de adicionar aos favoritos do usuario (criar objeto "favaorites" no doc de usuario)
+qnd adiciona produto nos favoritos, redirecionar e mostrat produto sem preisar reload the page
+
+O q falta: 
+- Fazer os grids dos produtos
+- Fazer form para adicionar informações que ativam o canBuy
+- Fazer sessão com os pedidos do usuário
+- Fazer carrinho
+- Fazer página de pagamento
