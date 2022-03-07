@@ -7,3 +7,73 @@ export const Section = styled.section`
     display: flex;
     justify-content: center;
 `;
+
+export const Container = styled.div`
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 50px;
+`;
+
+export const Title = styled.h1`
+    color: ${({ theme }) => theme.color.fontMain};
+    font-weight: 200;
+    font-size: 25vw;
+    line-height: 1;
+    letter-spacing: -1vw;
+    transform: translateX(-5px);
+    
+    @media only screen and (max-width: 900px) {
+        letter-spacing: -10px;
+        font-size: 84px;
+    }
+`;
+
+export const Error = styled.span`
+    font-family: ${({ theme }) => theme.font.fontTerciary};
+    color: ${({ theme }) => theme.color.fontMain};
+    font-weight: 500;
+    position: absolute;
+    font-size: 2vw;
+`;
+
+export const Message = styled.span`
+    font-family: ${({ theme }) => theme.font.fontTerciary};
+    color: ${({ theme }) => theme.color.fontMain};
+    font-size: 1.2vw;
+    font-weight: 500;
+`;
+
+export const WrapperMessage = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
+
+export const Button = styled.button`
+    border: none;
+    background-color: transparent;
+    color: ${({ theme }) => theme.color.fontMain};
+    font-size: 1vw;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: 'Jost', sans-serif;
+    transition: .2s ease-in;
+    text-transform: uppercase;
+
+    &:hover {
+        color: ${({ theme }) => theme.color.fontOrange};
+    }
+`;
