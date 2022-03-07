@@ -32,3 +32,8 @@ export const Wrapper = styled.div`
     align-items: flex-start;
     gap: 5px;
 `;
+
+export const Span = styled.span`
+    font-size: 12px;
+    color: ${({ theme }) => theme.color.fontMain};
+`;

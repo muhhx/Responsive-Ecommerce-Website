@@ -95,3 +95,8 @@ export const Products = styled.div`
         justify-content: center;
     }
 `;
+
+export const Span = styled.span`
+    font-size: 12px;
+    color: ${({ theme }) => theme.color.fontMain};
+`;

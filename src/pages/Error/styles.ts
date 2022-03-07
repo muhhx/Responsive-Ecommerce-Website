@@ -34,9 +34,8 @@ export const Title = styled.h1`
     letter-spacing: -1vw;
     transform: translateX(-5px);
     
-    @media only screen and (max-width: 900px) {
-        letter-spacing: -10px;
-        font-size: 84px;
+    @media only screen and (max-width: 500px) {
+        font-size: 50vw;
     }
 `;
 
@@ -46,6 +45,10 @@ export const Error = styled.span`
     font-weight: 500;
     position: absolute;
     font-size: 2vw;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 4vw;
+    }
 `;
 
 export const Message = styled.span`
@@ -53,6 +56,10 @@ export const Message = styled.span`
     color: ${({ theme }) => theme.color.fontMain};
     font-size: 1.2vw;
     font-weight: 500;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 2.4vw;
+    }
 `;
 
 export const WrapperMessage = styled.div`
@@ -75,5 +82,9 @@ export const Button = styled.button`
 
     &:hover {
         color: ${({ theme }) => theme.color.fontOrange};
+    }
+
+    @media only screen and (max-width: 500px) {
+        font-size: 2vw;
     }
 `;

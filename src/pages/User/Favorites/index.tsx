@@ -36,7 +36,7 @@ const Favorites: React.FC<Props> = ({ currentUserData }) => {
     return (
         <C.Container>
             <C.Wrapper>
-                {favoriteProducts.length === 0 ? <div>Você não possui nenhum item salvo</div> : 
+                {favoriteProducts.length === 0 ? <C.Span>Você não possui nenhum item salvo</C.Span> : 
                     favoriteProducts.map((product, key) => (
                         <C.Frame key={key} orderStatus={key % 2 === 0 ? true : false}>
                             <C.Number>{key + 1}</C.Number>

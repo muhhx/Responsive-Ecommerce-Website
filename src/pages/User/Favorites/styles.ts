@@ -80,3 +80,8 @@ export const InfoWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
 `;
+
+export const Span = styled.span`
+    font-size: 12px;
+    color: ${({ theme }) => theme.color.fontMain};
+`;

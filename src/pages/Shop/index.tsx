@@ -74,7 +74,7 @@ const Shop: React.FC = () => {
                 </C.Header>
                 {filterOpen ? <Filter F={F}/> : ''}
                 <C.Products>
-                    {filteredProducts.length === 0 ? <div>Nenhum produto encontrado</div> : 
+                    {filteredProducts.length === 0 ? <C.Span>Nenhum produto encontrado</C.Span> : 
                     filterProducts({filteredProducts, F}).map((product, i) => (
                         <Item key={i} product={product}/>
                     ))}
