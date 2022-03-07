@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
+
 import { useTheme } from "../../context/themeContext";
 import { useMenu } from "../../context/menuContext";
 import { useCart } from "../../context/cartContext";
+
 import { headerAssets } from "./data";
 import { Button, Container, Icon, Menu, Section, Span, Wrapper, LogoWrapper } from "./styles"
 
 const Header: React.FC = () => {
     const { isLight, setIsLight } = useTheme()
     const { isOpen, setIsOpen } = useMenu()
-    const { cart } = useCart()
+    const { totalPrice } = useCart()
 
     function handleTheme() {
         setIsLight(isLight === true ? false : true)
@@ -44,7 +46,7 @@ const Header: React.FC = () => {
                         </Link>
                     </Button>
                     <Link to={"/cart"}>
-                        <Span onClick={handlePageChange}>{headerAssets.spanBag} ({cart.length})</Span>
+                        <Span onClick={handlePageChange}>{headerAssets.spanBag} {totalPrice}.00</Span>
                     </Link>
                 </Wrapper>
             </Container>

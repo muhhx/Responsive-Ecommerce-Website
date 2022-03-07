@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import Item from "../pages/Item";
 import Cart from "../pages/Cart";
+import Payment from "../pages/Payment";
 
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -23,6 +24,9 @@ const Routing: React.FC = () => {
             <Route path={"/"} element={<Home />}/>
             <Route path={"/shop"} element={<Shop />}/>
             <Route path={"/product/:id"} element={<Item />}/>
+            <Route path={"/cart"} element={<Cart />}/>
+            <Route path={"/payment"} element={<Payment />}/>
+            <Route path={"*"} element={<div>404 Page</div>}/>
 
             <Route element={<LoggedRoute />}>
                 <Route path={"/login"} element={<Login />}/>
@@ -37,13 +41,10 @@ const Routing: React.FC = () => {
             <Route element={<PrivateRoute />}>
                 <Route path={"/user"} element={<User />}/>
             </Route>
+
             <Route element={<AdminRoute />}>
                 <Route path={"/admin"} element={<Admin />}/>
             </Route>
-            
-            <Route path={"/cart"} element={<Cart />}/>
-            <Route path={"/payment"} element={<div>Payment Page</div>}/>
-            <Route path={"*"} element={<div>404 Page</div>}/>
         </Routes>
     )
 }

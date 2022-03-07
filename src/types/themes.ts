@@ -5,7 +5,9 @@ export const themeLight = {
       fontMain: "#877673",
       fontOrange: "#ff670f",
       reverseColor: "#1B1B1B",
-      reverseHover: "#000000"
+      reverseHover: "#000000",
+      fontOrangeHover: "#e05200",
+      blackWhite: "#1B1B1B"
     },
     font: {
       fontSecundary: "Diot",
@@ -21,6 +23,8 @@ export const themeDark = {
       fontOrange: "#ff670f",
       reverseColor: "#877673",
       reverseHover: "#695f5d",
+      fontOrangeHover: "#e05200",
+      blackWhite: "#F5F1EC"
     },
     font: {
       fontSecundary: "Diot",
