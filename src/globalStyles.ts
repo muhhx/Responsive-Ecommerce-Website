@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     ::-webkit-scrollbar-thumb {
-        background-color: ${({ theme }) => theme.color.fontMain};
+        background-color: orange;
     }
 `;
 
