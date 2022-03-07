@@ -7,5 +7,4 @@ O q falta:
 - Fazer os grids dos produtos
 - Fazer form para adicionar informações que ativam o canBuy
 - Fazer sessão com os pedidos do usuário
-- Fazer carrinho
 - Fazer página de pagamento

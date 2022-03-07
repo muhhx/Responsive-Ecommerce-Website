@@ -86,11 +86,12 @@ export const Quantity = styled.span`
 export const Products = styled.div`
     width: 100%;
     margin: 50px 0px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
 
-    @media only screen and (max-width: 900px) {
-        grid-template-columns: repeat(3, 1fr);
+    @media only screen and (max-width: 500px) {
+        justify-content: center;
     }
 `;

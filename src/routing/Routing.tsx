@@ -11,6 +11,7 @@ import Shop from "../pages/Shop";
 import Item from "../pages/Item";
 import Cart from "../pages/Cart";
 import Payment from "../pages/Payment";
+import Error from "../pages/Error";
 
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -26,7 +27,7 @@ const Routing: React.FC = () => {
             <Route path={"/product/:id"} element={<Item />}/>
             <Route path={"/cart"} element={<Cart />}/>
             <Route path={"/payment"} element={<Payment />}/>
-            <Route path={"*"} element={<div>404 Page</div>}/>
+            <Route path={"*"} element={<Error />}/>
 
             <Route element={<LoggedRoute />}>
                 <Route path={"/login"} element={<Login />}/>

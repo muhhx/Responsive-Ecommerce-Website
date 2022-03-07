@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 type Props = {
-    hasDiscount: boolean;
+    hasDiscount?: boolean;
+    url?: string;
 }
 
 export const Container = styled.div`
+    max-width: 200px;
     width: 100%;
     height: 300px;
     display: flex;
@@ -23,8 +25,12 @@ export const ImageWrapper = styled.div`
     position: relative;
 `;
 
-export const Image = styled.img`
-    max-height: 100%;
+export const Image = styled.div`
+    height: 100%;
+    width: 100%;
+    background-image: url(${(props: Props) => props.url});
+    background-size: cover;
+    background-position: center center;
 `;
 
 export const DescriptionWrapper = styled.div`
