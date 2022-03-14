@@ -8,6 +8,7 @@ type Props = {
 
 const Item: React.FC<Props> = ({ product }) => {
     return (
+        <Link to={`/product/${product.id}`}>
             <C.Container>
                     <C.ImageWrapper>
                         {product.conditions.isNew ? <C.NewWrapper>NEW</C.NewWrapper> : ''}
@@ -24,6 +25,7 @@ const Item: React.FC<Props> = ({ product }) => {
 
                 </C.DescriptionWrapper>
             </C.Container>
+        </Link>
     )
 }
 
