@@ -19,7 +19,18 @@
 <p>E-commerce responsivo utilizando React.js, Typescript e Firebase. Com autenticação, carrinho, theme switcher (light e dark), filtros de produto, além de várias outras funcionalidades, como operações CRUD na página de administrador</p>
 
 ## Preview
-<p>N preciso gravar GIF pra cada funcionalidade, posso gravar gifs longos mostrando varias funcionalidades de uma vez só/p>
+- Responsividade (todas as páginas)
+- Theme switcher (todas as páginas)
+
+- Filtros shop + página de produto
+- Adicionar produto a lista de desejos
+
+- Autenticação usuário normal (fazendo o login e mostrando a página do usuario)
+- Autenticação admin (fazendo login, mostrar painel que aparece no topo + mostrar página do admin)
+
+- Adicionando um produto
++ VIDEOS PRO LINKEDIN
+
 
 ## Funcionalidades
 - [x] Autenticação de usuário
