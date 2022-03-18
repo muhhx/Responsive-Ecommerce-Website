@@ -1,17 +1,17 @@
-<h1 align="center">Responsive Ecommerce Project</h1>
-<h4 align="center">Projeto em construção.🎓✨</h4> <!-- So colcoar caso esteja em manutenção !-->
-<p align="center">Clique <a>aqui</a> para acessar a demo do site.</p>
+<h2 align="center">Responsive Ecommerce Project.🎓✨ [Em construção!]</h2>
+<p align="center" href="https://ecommerce-responsive-design.netlify.app/">Clique aqui para acessar o site.</a>
 <div align="center">
 
 [![Linkedin Badge](https://img.shields.io/badge/-Murilo%20Santos-231f20?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/giovannalinda)](https://www.linkedin.com/in/muhhx) 
 [![Gmail Badge](https://img.shields.io/badge/-muriloue@gmail.com-231f20?style=flat-square&logo=Gmail&logoColor=white&link=mailto:muriloue@gmail.com)](mailto:muriloue@gmail.com)
+
 </div>
 <p align="center">
     <a href="#Sobre">Sobre</a> - 
     <a href="#Preview">Preview</a> - 
     <a href="#Funcionalidades">Funcionalidades</a> - 
     <a href="#Tecnologias">Tecnologias</a> - 
-    <a href="#Install">Instalar</a>
+    <a href="#Instalar">Instalar</a>
 </p>
 
 ## Sobre
@@ -34,21 +34,18 @@
 - [ ] Adicionar uma interface para a função handleAddProducts no firebase config
 
 ## Tecnologias
-<ul>
-    <li>Vite</li>
-    <li>Typescript</li>
-    <li>React.js</li>
-    <li>Styled-components</li>
-    <li>React Hooks</li>
-    <li>Context API</li>
-    <li>React Router Dom v6</li>
-    <li>Private Routes</li>
-    <li>Firebase</li>
-</ul>
+- Vite
+- Typescript
+- React.js
+- Styled-components
+- React Hooks
+- Context API
+- React Router Dom v6.
+- Firebase
 
 ## Instalar
-<p>Antes de começar, você vai precisar ter instalado em sua máquina, as seguintes ferramentas:
-    <a href="https://git-scm.com">Git</a>. 
+<p>Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+    <a href="https://git-scm.com">Git</a> e <a href="https://nodejs.org/en/">Node.js</a>. 
     Além disto, é bom ter um editor para trabalhar com o código como 
     <a href="https://code.visualstudio.com/">VSCode</a>.
 </p>
