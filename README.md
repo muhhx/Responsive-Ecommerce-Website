@@ -1,5 +1,5 @@
-<h2 align="center">Responsive Ecommerce Project.🎓✨ [Em construção!]</h2>
-<p align="center" href="https://ecommerce-responsive-design.netlify.app/">Clique aqui para acessar o site.</a>
+<h1>Responsive Ecommerce Project</h1>
+<h3 align="center">Em construção. 🎓✨</h3>
 <div align="center">
 
 [![Linkedin Badge](https://img.shields.io/badge/-Murilo%20Santos-231f20?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/giovannalinda)](https://www.linkedin.com/in/muhhx) 
@@ -15,6 +15,7 @@
 </p>
 
 ## Sobre
+<a href="https://ecommerce-responsive-design.netlify.app/">Clique aqui para acessar o site.</a>
 <p>E-commerce responsivo utilizando React.js, Typescript e Firebase. Com autenticação, carrinho, theme switcher (light e dark), filtros de produto, além de várias outras funcionalidades, como operações CRUD na página de administrador</p>
 
 ## Preview
