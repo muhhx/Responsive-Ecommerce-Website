@@ -25,8 +25,10 @@ export const Image = styled.div`
     width: 100%;
     height: 80vh;
     background-image: url(${(props: Props) => props.url});
-    background-size: cover;
+    background-size: auto 100%;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #f5f5f7;
 `;
 
 export const InformationContainer = styled.div`
@@ -71,8 +73,9 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
     text-align: center;
-    max-width: 60%;
-    font-size: 12px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
     color: ${({ theme }) => theme.color.fontMain};
 
     @media only screen and (max-width: 250px) {
