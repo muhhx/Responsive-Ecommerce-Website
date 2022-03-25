@@ -1,7 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 interface Props {
-    isOpen: boolean;
+    isOpen?: boolean;
+    bgColor?: string;
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,6 +21,23 @@ export const GlobalStyle = createGlobalStyle`
     
     ::-webkit-scrollbar-thumb {
         background-color: orange;
+    }
+
+    input[type=range] {
+        -webkit-appearance: none;
+        background-color: ${( props: Props ) => props.bgColor};
+        height: 1px;
+        padding: 0px 10px;
+        width: 100px;
+        margin-top: 5px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        background-color: ${( props: Props ) => props.bgColor};
     }
 `;
 

@@ -28,7 +28,7 @@ const App: React.FC = () => {
       <Main>
         <Routing />
       </Main>
-      <GlobalStyle isOpen={isOpen}/>
+      <GlobalStyle isOpen={isOpen} bgColor={isLight ? themeLight.color.fontMain : themeDark.color.fontMain}/>
     </ThemeProvider>
   )
 }
