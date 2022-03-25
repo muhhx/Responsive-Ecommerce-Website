@@ -23,7 +23,7 @@ export const ImagesContainer = styled.div`
 
 export const Image = styled.div`
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background-image: url(${(props: Props) => props.url});
     background-size: auto 100%;
     background-position: center center;
@@ -64,7 +64,7 @@ export const Category = styled.span`
 
 export const Title = styled.h1`
     color: ${({ theme }) => theme.color.fontMain};
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
     text-align: center;
     line-height: 1;
