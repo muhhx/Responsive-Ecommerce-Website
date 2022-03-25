@@ -85,8 +85,10 @@ export const Image = styled.div`
     height: 100%;
     width: 40%;
     background-image: url(${(props: Props) => props.url});
-    background-size: cover;
+    background-size: auto 100%;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
 
     @media only screen and (max-width: 450px) {
         width: 100%;
@@ -111,8 +113,7 @@ export const BasicInformation = styled.div`
 
 export const Name = styled.h1`
     font-size: 22px;
-    font-weight: 600;
-    font-family: ${({ theme }) => theme.font.fontTerciary};
+    font-weight: 400;
     color: ${({ theme }) => theme.color.fontMain};
     line-height: 1;
 `;
