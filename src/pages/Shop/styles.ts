@@ -86,13 +86,21 @@ export const Quantity = styled.span`
 export const Products = styled.div`
     width: 100%;
     margin: 50px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 50px;
 
-    @media only screen and (max-width: 500px) {
-        justify-content: center;
+    @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media only screen and (max-width: 650px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: 400px) {
+        grid-template-columns: repeat(1, 1fr);
     }
 `;
 

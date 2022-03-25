@@ -6,9 +6,8 @@ type Props = {
 }
 
 export const Container = styled.div`
-    max-width: 200px;
     width: 100%;
-    height: 300px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -16,7 +15,7 @@ export const Container = styled.div`
 
 export const ImageWrapper = styled.div`
     width: 100%;
-    height: 90%;
+    height: 100%;
     display: flex;
     align-self: center;
     justify-content: center;
@@ -29,8 +28,10 @@ export const Image = styled.div`
     height: 100%;
     width: 100%;
     background-image: url(${(props: Props) => props.url});
-    background-size: cover;
+    background-size: auto 100%;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
 `;
 
 export const DescriptionWrapper = styled.div`

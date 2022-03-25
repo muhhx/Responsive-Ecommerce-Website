@@ -54,7 +54,7 @@ export const InformationWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 `;
 
 export const Category = styled.span`
@@ -64,11 +64,11 @@ export const Category = styled.span`
 
 export const Title = styled.h1`
     color: ${({ theme }) => theme.color.fontMain};
-    font-family: ${({ theme }) => theme.font.fontTerciary};
-    font-size: 36px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 400;
     text-align: center;
     line-height: 1;
+    text-transform: uppercase;
 `;
 
 export const Description = styled.p`

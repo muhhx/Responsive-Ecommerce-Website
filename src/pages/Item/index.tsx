@@ -66,14 +66,14 @@ const Item: React.FC = () => {
             <C.InformationContainer>
                 <C.InformationWrapper>
                     <C.Divider>
-                        {currentProduct?.conditions.isNew ? <C.Category>NOVO</C.Category> : ''}
+                        {currentProduct?.conditions.isNew ? <C.Category>NOVO</C.Category> : <C.Category>{currentProduct?.category}</C.Category>}
                         <C.Title>{currentProduct?.name}</C.Title>
                         <C.Description>{currentProduct?.description}</C.Description>
                     </C.Divider>
                     {error ? <C.Category>{error}</C.Category> : ''}
                     <C.Wrapper>
-                        <C.Price hasDiscount={currentProduct?.conditions.hasDiscount ? true : false}>R$ {currentProduct?.pricing.price}</C.Price>
-                        {currentProduct?.conditions.hasDiscount ? <C.Discount>R$ {currentProduct.pricing.discountPrice}</C.Discount> : ''}
+                        <C.Price hasDiscount={currentProduct?.conditions.hasDiscount ? true : false}>R$ {currentProduct?.pricing.price},00</C.Price>
+                        {currentProduct?.conditions.hasDiscount ? <C.Discount>R$ {currentProduct.pricing.discountPrice},00</C.Discount> : ''}
                     </C.Wrapper>
                     <C.Divider>
                         <C.OptionsWrapper>
