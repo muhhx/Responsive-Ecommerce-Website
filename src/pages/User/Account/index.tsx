@@ -15,7 +15,7 @@ const Account: React.FC<Props> = ({ currentUserData }) => {
     return (
         <C.Container>
             <C.Span>Current Account: {currentUserData?.email}</C.Span>
-            {currentUserData?.canBuy ? '' : <C.Span>Preencha todas as informações para finalizar compra</C.Span>}
+            {currentUserData?.canBuy ? '' : <C.Span>Dados</C.Span>}
             <C.Button onClick={handleLogout}>Signout</C.Button>
         </C.Container>
     )

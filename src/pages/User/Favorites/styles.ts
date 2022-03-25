@@ -34,8 +34,10 @@ export const Image = styled.div`
     height: 100%;
     width: 100%;
     background-image: url(${(props: Props) => props.url});
-    background-size: cover;
+    background-size: auto 100%;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
 `;
 
 export const Description = styled.div`

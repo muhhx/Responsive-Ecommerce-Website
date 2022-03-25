@@ -29,7 +29,7 @@ const Filter: React.FC<Props> = ({ F }) => {
             </C.Row>
             <C.Row>
                 <C.FilterName>Price Range</C.FilterName>
-                <C.Range type="range" min={0} max={1000} value={F.priceFilter} onChange={(e) => F.setPriceFilter(Number(e.target.value))}/>
+                <C.Range type="range" min={0} max={10000} value={F.priceFilter} onChange={(e) => F.setPriceFilter(Number(e.target.value))}/>
             </C.Row>
             <C.Clear onClick={F.clearFilters}>Clear</C.Clear>
         </C.Container>
